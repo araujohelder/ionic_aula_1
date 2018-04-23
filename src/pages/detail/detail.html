@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> Aluno </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- PROGRAMANDO O CARD -->
+  <ion-card *ngIf="aluno" style="max-width: 440px; margin: 0 auto">
+    <img [src]="aluno.foto" width="350" height="400">
+
+    <!-- TITULO DO CARD -->
+    <ion-card-title>
+        {{aluno.nome}} - {{aluno.media}} - {{aluno.situacao}}
+    </ion-card-title>
+
+    <!-- DADOS DO CARD -->
+    <div> Disciplina: {{aluno?.disciplina}} </div>
+    <div> Nota1: {{aluno?.nota1}} </div>
+    <div> Nota2: {{aluno?.nota2}} </div>
+
+  </ion-card>
+</ion-content>

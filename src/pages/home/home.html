@@ -1,14 +1,25 @@
+<!-- CABEÇALHO DA TELA  -->
 <ion-header>
+  <!-- BARRA DE NAVEGAÇÃO -->
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title> Listagem - Alunos </ion-title>
   </ion-navbar>
 </ion-header>
 
+<!-- CONTEUDO DA TELA -->
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <!-- PROGRAMANDO O EMPREENCHIMENTO DA LISTA DE ALUNOS -->
+  <div *ngFor="let aluno of alunos" style="border-bottom: 1px solid #DDD; padding: 10px; position: relative">
+
+    <img [src]="aluno.foto" width="120" height="140" style="cursor: pointer" (click)="irParaDetail(aluno)">
+    <div> Nome: {{aluno.nome}} </div>
+    <div> Média: {{aluno.media}} </div>
+    <div> Situação: {{aluno.situacao}} </div>
+
+    <!-- SETA PARA IR PARA DETAILS -->
+    <ion-icon name="ios-arrow-forward" style="right: 20px" (click)="irParaDetail(aluno)" >
+    </ion-icon>
+  </div>
+
 </ion-content>

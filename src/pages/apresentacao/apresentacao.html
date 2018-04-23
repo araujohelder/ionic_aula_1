@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Slides</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- PROGRAMANDO OS SLIDES, LOOP ATIVO, INICIA AUTOMATICAMENTE, VELOCIDADE 2 SEGUNDOS -->
+    <ion-slides paginationClickable=true initialSlide=0 loop=true autoplay=1000 speed=2000 #myslider>
+      <ion-slide *ngFor="let item of elenco">
+        <ion-item class="posicao">
+          {{item.nome}}
+        </ion-item>
+        <ion-item>
+            {{item.nome}} - {{item.descricao}}
+        </ion-item>
+        <img [src]="item.img">
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item>
+      <button ion-button round (click)="slideNext()">Proximo</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button round (click)="slidePrev()">Anterior</button>
+    </ion-item>
+    <ion-item>
+        <button ion-button round (click)="entrar()">Entrar</button>
+    </ion-item>
+</ion-content>
